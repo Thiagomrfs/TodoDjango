@@ -20,3 +20,8 @@ def add_todo(request):
     Todo.objects.create(text=content)
 
     return HttpResponseRedirect("/")
+
+def remove_todo(request, todo_id):
+    Todo.objects.get(id=todo_id).delete()
+
+    return HttpResponseRedirect("/")
